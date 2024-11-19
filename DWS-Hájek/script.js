@@ -63,3 +63,18 @@ function sumHodnoty() {
     const cislo3 = parseFloat(document.getElementById('cislo3').value) || 0;
     document.getElementById('vysledek').innerText = `Výsledek: ${cislo2 + cislo3}`;
 }
+
+document.getElementById('cc').addEventListener('click', () => {
+    const taskInput = document.getElementById('taskInput');
+    const neco = document.getElementById('neco');
+
+    const novyTask = document.createElement('li');
+    novyTask.textContent = taskInput.value;
+
+    novyTask.addEventListener('click', () => {
+        neco.removeChild(novyTask);
+    });
+
+    neco.appendChild(novyTask);
+    taskInput.value = '';
+});
